@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Artikel - DPIB</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#f7f9fb", "background": "#f7f9fb", "on-surface": "#191c1e",
+            "surface-container": "#eceef0", "surface-container-high": "#e6e8ea", "surface-container-highest": "#e0e3e5",
+            "surface-container-low": "#f2f4f6", "surface-container-lowest": "#ffffff", "primary": "#000000",
+            "on-primary": "#ffffff", "secondary": "#515f74", "surface": "#f7f9fb", "outline": "#76777d", "outline-variant": "#c6c6cd"
+          },
+          fontFamily: { sans: ["Inter", "sans-serif"], mono: ["JetBrains Mono", "monospace"] }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      main > section {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      main > section:first-child {
+        padding-top: 3.5rem;
+      }
+      main > section:nth-child(2) {
+        margin-bottom: 5rem;
+      }
+      main > section:nth-child(3) {
+        padding-bottom: 5rem;
+      }
+      main > section:nth-child(3) .space-y-8 {
+        gap: 3rem;
+      }
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.show { display: flex; }
+  </style>
+  
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white w-full top-0 sticky border-b border-outline-variant z-50">
+    <div class="flex justify-between items-center h-20 px-6 md:px-16 max-w-7xl mx-auto">
+      <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-primary">DPIB</a>
+      <nav class="hidden md:flex items-center gap-8 font-medium">
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="index.html#profil">Profil</a>
+        <a class="nav-link active text-primary hover:text-primary transition-colors" href="artikel.html">Artikel</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="galeri.html">Galeri</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="kontak.html">Kontak</a>
+      </nav>
+      <button class="hidden md:block bg-primary text-on-primary px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-opacity-90 transition-colors">
+        Konsultasi
+      </button>
+      <button id="menu-btn" class="md:hidden text-primary p-2 focus:outline-none" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-outline-variant px-6 py-4 flex flex-col gap-4">
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="index.html">Home</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="index.html#profil">Profil</a>
+      <a class="text-primary font-bold hover:text-primary transition-colors py-1" href="artikel.html">Artikel</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="galeri.html">Galeri</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="kontak.html">Kontak</a>
+      <button class="w-full bg-primary text-on-primary py-3 font-mono text-xs uppercase tracking-widest mt-2">
+        Konsultasi
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Page Header -->
+    <section class="mb-12 border-b border-outline-variant pb-8 px-6 md:px-16">
+      <h1 class="text-3xl md:text-4xl font-bold text-primary mb-4">Wawasan & Berita</h1>
+      <p class="text-lg text-secondary max-w-2xl">Eksplorasi terkini seputar dunia arsitektur, pemodelan informasi bangunan (BIM), dan teknologi konstruksi.</p>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="mb-16 px-6 md:px-16">
+      <h2 class="text-xs font-mono text-secondary tracking-widest uppercase mb-4 border-l-2 border-primary pl-2">Sorotan Utama</h2>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-0 border border-outline-variant bg-surface group cursor-pointer hover:bg-surface-container-low transition-colors duration-300">
+        <div class="md:col-span-8 border-r border-outline-variant relative overflow-hidden h-64 md:h-96">
+          <div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-700" 
+               style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4lBkkAoNaUpfhtoGDMrvrH5qDkY5n6h7hcvYPrWbbuSr1GSaNehLV8N0YZCCSxANRgXPuAFOlunyQ69OhYj5Ypgw7QVypNttLALCopGRyiHjNzpytoCOiznHlEPgbggAa2zJHu7nod8tMkurvgb-a7lbUacFMsu0ctAAjmu_noYRPbhaYB_e7WvGoV1YxFoPxcforoyYW-OeHwZQUAIKEx3GOYFrhO7XF1zn5xIixXxmyKwaqMIyLIg')">
+          </div>
+        </div>
+        <div class="md:col-span-4 p-8 flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2 py-1 bg-primary-container text-on-primary-container font-mono text-xs uppercase">TUTORIAL</span>
+            <h3 class="text-2xl font-bold text-primary mb-4 leading-tight group-hover:underline decoration-1 underline-offset-4">Implementasi BIM Level 3 pada Proyek Infrastruktur Skala Besar</h3>
+            <p class="text-secondary line-clamp-3">Panduan komprehensif mengenai transisi dari CAD konvensional menuju pemodelan 3D terintegrasi penuh untuk efisiensi biaya dan waktu konstruksi.</p>
+          </div>
+          <div class="mt-8 flex items-center justify-between border-t border-outline-variant pt-4">
+            <span class="text-xs font-mono text-outline">12 OKT 2024</span>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Grid -->
+    <section class="px-6 md:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <!-- Sidebar -->
+        <aside class="md:col-span-3">
+          <div class="sticky top-28">
+            <!-- Search -->
+            <div class="mb-6">
+              <h3 class="text-xs font-mono text-secondary tracking-widest uppercase mb-2">Pencarian</h3>
+              <div class="relative">
+                <input class="w-full bg-surface-bright border border-outline-variant text-primary font-mono text-xs p-3 pl-10 focus:outline-none focus:border-primary transition-colors rounded-none placeholder:text-outline" placeholder="Cari artikel..." type="text"/>
+                <span class="material-symbols-outlined absolute left-3 top-3 text-outline">search</span>
+              </div>
+            </div>
+            
+            <!-- Categories -->
+            <div class="mb-6">
+              <h3 class="text-xs font-mono text-secondary tracking-widest uppercase mb-2 border-l-2 border-outline-variant pl-2">Kategori</h3>
+              <ul class="flex flex-col border-t border-outline-variant">
+                <li class="border-b border-outline-variant">
+                  <a class="flex justify-between items-center py-2 font-mono text-xs text-secondary hover:text-primary transition-colors group" href="#">
+                    <span>Semua</span>
+                    <span class="font-mono text-xs text-outline group-hover:text-primary">24</span>
+                  </a>
+                </li>
+                <li class="border-b border-outline-variant">
+                  <a class="flex justify-between items-center py-2 font-mono text-xs text-primary font-bold transition-colors group" href="#">
+                    <span>Tutorial</span>
+                    <span class="font-mono text-xs text-primary">12</span>
+                  </a>
+                </li>
+                <li class="border-b border-outline-variant">
+                  <a class="flex justify-between items-center py-2 font-mono text-xs text-secondary hover:text-primary transition-colors group" href="#">
+                    <span>Berita</span>
+                    <span class="font-mono text-xs text-outline group-hover:text-primary">8</span>
+                  </a>
+                </li>
+                <li class="border-b border-outline-variant">
+                  <a class="flex justify-between items-center py-2 font-mono text-xs text-secondary hover:text-primary transition-colors group" href="#">
+                    <span>Event</span>
+                    <span class="font-mono text-xs text-outline group-hover:text-primary">4</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+
+
+
+            
+            <!-- Recent Posts -->
+            <div>
+              <h3 class="text-xs font-mono text-secondary tracking-widest uppercase mb-2">Postingan Terbaru</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <img class="w-10 h-10 rounded object-cover" src="dpib 5.jpg" alt="Thumbnail 1">
+                  <div class="flex-1">
+                    <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors line-clamp-2">Mengenal Dasar-Dasar Modeling BIM untuk Pemula</a>
+                    <p class="text-xs text-outline mt-1">12 Okt 2024</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <img class="w-10 h-10 rounded object-cover" src="dpib 6.jpg" alt="Thumbnail 2">
+                  <div class="flex-1">
+                    <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors line-clamp-2">Tren Teknologi Konstruksi Berkelanjutan 2025</a>
+                    <p class="text-xs text-outline mt-1">05 Okt 2024</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <img class="w-10 h-10 rounded object-cover" src="dpib 7.jpg" alt="Thumbnail 3">
+                  <div class="flex-1">
+                    <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors line-clamp-2">Workshop Teknik Pengukuran Lahir dengan Total Station</a>
+                    <p class="text-xs text-outline mt-1">28 Sep 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="md:col-span-9">
+          <div class="space-y-8">
+            <!-- Article 1 -->
+            <article class="border-b border-outline-variant pb-6 last:border-b-0 last:pb-0">
+              <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="w-full md:w-48">
+                  <img class="h-48 w-full object-cover rounded" src="dpib 5.jpg" alt="Artikel 1">
+                </div>
+                <div class="flex-1">
+                  <span class="inline-block px-2 py-1 bg-primary-container text-on-primary-container font-mono text-xs uppercase mb-2">TUTORIAL</span>
+                  <h2 class="text-xl font-bold text-primary mb-3">Mengenal Dasar-Dasar Modeling BIM untuk Pemula</h2>
+                  <p class="text-secondary mb-4 line-clamp-4">Panduan langkah demi langkah untuk memulai menggunakan perangkat lunak BIM seperti Revit dan ArchiCAD, termasuk terminologi dasar, workflow, dan tips untuk meningkatkan produktivitas dalam proyek desain awal.</p>
+                  <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors">Baca Selengkapnya →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="border-b border-outline-variant pb-6 last:border-b-0 last:pb-0">
+              <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="w-full md:w-48">
+                  <img class="h-48 w-full object-cover rounded" src="dpib 6.jpg" alt="Artikel 2">
+                </div>
+                <div class="flex-1">
+                  <span class="inline-block px-2 py-1 bg-primary-container text-on-primary-container font-mono text-xs uppercase mb-2">BERITA</span>
+                  <h2 class="text-xl font-bold text-primary mb-3">Tren Teknologi Konstruksi Berkelanjutan 2025</h2>
+                  <p class="text-secondary mb-4 line-clamp-4">Analisis terkait inovasi terbaru dalam konstruksi berkelanjutan, termasuk penggunaan material daur ulang, sistem energi terintegrasi, dan sertifikasi hijau yang menjadi standar industri global.</p>
+                  <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors">Baca Selengkapnya →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="border-b border-outline-variant pb-6 last:border-b-0 last:pb-0">
+              <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="w-full md:w-48">
+                  <img class="h-48 w-full object-cover rounded" src="dpib 7.jpg" alt="Artikel 3">
+                </div>
+                <div class="flex-1">
+                  <span class="inline-block px-2 py-1 bg-primary-container text-on-primary-container font-mono text-xs uppercase mb-2">EVENT</span>
+                  <h2 class="text-xl font-bold text-primary mb-3">Workshop Teknik Pengukuran Lahir dengan Total Station</h2>
+                  <p class="text-secondary mb-4 line-clamp-4">Pelatihan praktis yang mengajarkan teknik pengukuran lahir menggunakan Total Station terkini, termasuk pengolahan data, pemetaan kontur, dan aplikasi dalam proyek infrastruktur dan pertanahan.</p>
+                  <a href="#" class="font-mono text-xs text-primary hover:text-primary transition-colors">Baca Selengkapnya →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest border-t border-outline-variant py-12 px-6 md:px-16 text-on-surface">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <div class="text-2xl font-bold text-primary mb-2">DPIB</div>
+        <p class="text-sm text-secondary">Desain Pemodelan dan Informasi Bangunan. Mencetak tenaga kerja profesional arsitektur & konstruksi.</p>
+      </div>
+      <div class="text-xs font-mono text-outline">
+        &copy; 2026 DPIB. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

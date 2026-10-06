@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Kontak - DPIB</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#f7f9fb", "background": "#f7f9fb", "on-surface": "#191c1e",
+            "surface-container": "#eceef0", "surface-container-high": "#e6e8ea", "surface-container-highest": "#e0e3e5",
+            "surface-container-low": "#f2f4f6", "surface-container-lowest": "#ffffff", "primary": "#000000",
+            "on-primary": "#ffffff", "secondary": "#515f74", "surface": "#f7f9fb", "outline": "#76777d", "outline-variant": "#c6c6cd"
+          },
+          fontFamily: { sans: ["Inter", "sans-serif"], mono: ["JetBrains Mono", "monospace"] }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.show { display: flex; }
+  </style>
+  
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white w-full top-0 sticky border-b border-outline-variant z-50">
+    <div class="flex justify-between items-center h-20 px-6 md:px-16 max-w-7xl mx-auto">
+      <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-primary">DPIB</a>
+      <nav class="hidden md:flex items-center gap-8 font-medium">
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="index.html#profil">Profil</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="artikel.html">Artikel</a>
+        <a class="nav-link text-secondary hover:text-primary transition-colors" href="galeri.html">Galeri</a>
+        <a class="nav-link active text-primary hover:text-primary transition-colors" href="kontak.html">Kontak</a>
+      </nav>
+      <button class="hidden md:block bg-primary text-on-primary px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-opacity-90 transition-colors">
+        Konsultasi
+      </button>
+      <button id="menu-btn" class="md:hidden text-primary p-2 focus:outline-none" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-outline-variant px-6 py-4 flex flex-col gap-4">
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="index.html">Home</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="index.html#profil">Profil</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="artikel.html">Artikel</a>
+      <a class="text-secondary hover:text-primary transition-colors py-1" href="galeri.html">Galeri</a>
+      <a class="text-primary font-bold hover:text-primary transition-colors py-1" href="kontak.html">Kontak</a>
+      <button class="w-full bg-primary text-on-primary py-3 font-mono text-xs uppercase tracking-widest mt-2">
+        Konsultasi
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <section class="px-6 md:px-16 py-12 border-b border-outline-variant">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-4">Hubungi Kami</h1>
+            <p class="text-sm text-secondary max-w-2xl mb-8">Kami siap mendiskusikan kebutuhan pemodelan informasi bangunan dan arsitektur Anda. Silakan hubungi kami melalui form atau detail kontak di bawah.</p>
+
+            <div class="border border-outline-variant bg-surface-container-low h-56 relative overflow-hidden mb-4">
+              <iframe class="w-full h-full border-0" src="https://www.google.com/maps?q=SMKN+1+Kawali&output=embed" title="Peta lokasi SMKN 1 Kawali" loading="lazy" allowfullscreen></iframe>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 border border-outline-variant bg-surface-bright">
+                <span class="material-symbols-outlined text-primary mb-2">location_on</span>
+                <h3 class="text-sm font-bold text-primary mb-2">Alamat</h3>
+                <p class="text-xs text-secondary">Jl. Arsitektur No. 12<br/>Jakarta Selatan, 12345<br/>Indonesia</p>
+              </div>
+              <div class="p-4 border border-outline-variant bg-surface-bright">
+                <span class="material-symbols-outlined text-primary mb-2">mail</span>
+                <h3 class="text-sm font-bold text-primary mb-2">Email</h3>
+                <p class="text-xs text-secondary">halo@dpib.id<br/>proyek@dpib.id</p>
+              </div>
+              <div class="sm:col-span-2 p-4 border border-outline-variant bg-surface-bright">
+                <span class="material-symbols-outlined text-primary mb-2">call</span>
+                <h3 class="text-sm font-bold text-primary mb-2">Telepon</h3>
+                <p class="text-xs text-secondary">+62 21 5555 1234 (Kantor)<br/>+62 811 2233 4455 (WhatsApp)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:pt-16">
+            <h2 class="text-2xl font-bold text-primary mb-6 border-b border-outline-variant pb-4">Kirim Pesan</h2>
+            <form class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs text-secondary uppercase tracking-widest" for="name">Nama Lengkap</label>
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 font-mono text-xs text-on-surface focus:ring-0 focus:border-primary transition-colors" id="name" placeholder="Masukkan nama Anda" type="text"/>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs text-secondary uppercase tracking-widest" for="email">Email</label>
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 font-mono text-xs text-on-surface focus:ring-0 focus:border-primary transition-colors" id="email" placeholder="nama@email.com" type="email"/>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs text-secondary uppercase tracking-widest" for="subject">Subjek</label>
+                <select class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 font-mono text-xs text-on-surface focus:ring-0 focus:border-primary transition-colors" id="subject">
+                  <option>Konsultasi Proyek Baru</option>
+                  <option>Dukungan Teknis BIM</option>
+                  <option>Kerjasama Kemitraan</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="font-mono text-xs text-secondary uppercase tracking-widest" for="message">Pesan</label>
+                <textarea class="w-full bg-transparent border border-outline-variant p-3 font-mono text-xs text-on-surface focus:ring-0 focus:border-primary transition-colors resize-none mt-2" id="message" placeholder="Tuliskan detail kebutuhan Anda..." rows="4"></textarea>
+              </div>
+              <button class="mt-4 bg-primary text-on-primary px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2">
+                Kirim Pesan
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest border-t border-outline-variant py-12 px-6 md:px-16 text-on-surface">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <div class="text-2xl font-bold text-primary mb-2">DPIB</div>
+        <p class="text-sm text-secondary">Desain Pemodelan dan Informasi Bangunan. Mencetak tenaga kerja profesional arsitektur & konstruksi.</p>
+      </div>
+      <div class="text-xs font-mono text-outline">
+        &copy; 2026 DPIB. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
