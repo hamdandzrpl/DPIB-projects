@@ -513,7 +513,7 @@ Didistribusikan di bawah **MIT License**. Terbuka untuk digunakan, dimodifikasi,
 
 <div align="center">
 
-<sub>Dibangun dengan bangga untuk memajukan talenta vokasi teknik dan teknologi di SMKN 1 Kawali.</sub>
+<sub>Dibangun oleh HamdanDzakir untuk tugas pembuatan website jurusan dpib SMKN 1 Kawali.</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,100:0F172A&height=110&section=footer" alt="" width="100%" />
 
