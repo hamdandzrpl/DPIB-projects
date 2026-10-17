@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:0EA5E9&height=220&section=header&text=web%20DPIB%&fontSize=54&fontColor=FFFFFF&fontAlignY=38&desc=Desain%20Pemodelan%20dan%20Informasi%20Bangunan%20%E2%80%A2%20SMK%20Negeri%201%20Kawali&descAlignY=58&descSize=18" alt="DPIB Web Portal" width="100%" />
 
-### Profil Jurusan dan Sistem Informasi Portofolio Siswa
+### Profil Jurusan dan Sistem Informasi Portofolio Siswa!
 
 *Presisi desain arsitektural, dipublikasikan untuk dunia.*
 
